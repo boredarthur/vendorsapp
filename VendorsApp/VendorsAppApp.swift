@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct VendorsAppApp: App {
+    
+    let searchStore = SearchStore(initialState: .init(), reducer: searchReducer)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
+                .environmentObject(searchStore)
         }
     }
 }

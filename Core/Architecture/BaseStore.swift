@@ -10,7 +10,7 @@ import Combine
 
 typealias Reducer<State: BaseState, Action: BaseAction> = (inout State, Action) -> AnyPublisher<Action, Never>?
 
-class Store<State: BaseState, Action: BaseAction>: ObservableObject {
+class BaseStore<State: BaseState, Action: BaseAction>: ObservableObject {
     
     // MARK: - Properties (private)
     

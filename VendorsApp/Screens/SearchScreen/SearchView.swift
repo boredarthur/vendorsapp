@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SearchView.swift
 //  VendorsApp
 //
 //  Created by Артур Заволович on 02.05.2023.
@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SearchView: View {
+    
+    @EnvironmentObject var searchStore: SearchStore
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +22,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SearchView()
+            .environmentObject(SearchStore(initialState: .init(), reducer: searchReducer))
     }
 }

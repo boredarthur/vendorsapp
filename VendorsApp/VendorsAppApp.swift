@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct VendorsAppApp: App {
     
-    let searchStore = SearchStore(initialState: .init(), reducer: searchReducer)
+    let searchStore = SearchStore(initialState: .init(),
+                                  reducer: searchReducer,
+                                  middlewares: [networkingMiddleware(service: MockedNetworkingService())])
     
     var body: some Scene {
         WindowGroup {

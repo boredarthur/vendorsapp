@@ -29,6 +29,7 @@
 		AB22B5392A02FF3E0067ABFD /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5382A02FF3E0067ABFD /* NetworkingService.swift */; };
 		AB22B53C2A0300880067ABFD /* MockedNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B53B2A0300880067ABFD /* MockedNetworkingService.swift */; };
 		AB22B5422A0322FE0067ABFD /* VendorsReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5412A0322FE0067ABFD /* VendorsReponse.swift */; };
+		AB22B5452A032AA80067ABFD /* SearchMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5442A032AA80067ABFD /* SearchMiddleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		AB22B5382A02FF3E0067ABFD /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		AB22B53B2A0300880067ABFD /* MockedNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkingService.swift; sourceTree = "<group>"; };
 		AB22B5412A0322FE0067ABFD /* VendorsReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsReponse.swift; sourceTree = "<group>"; };
+		AB22B5442A032AA80067ABFD /* SearchMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMiddleware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				AB22B5242A01C9760067ABFD /* SearchState.swift */,
 				AB22B5262A01C9900067ABFD /* SearchStore.swift */,
 				AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */,
+				AB22B5442A032AA80067ABFD /* SearchMiddleware.swift */,
 			);
 			path = SearchScreen;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				AB22B4EF2A0195810067ABFD /* VendorsAppApp.swift in Sources */,
 				AB22B52F2A02ECFD0067ABFD /* VendorModel.swift in Sources */,
 				AB22B5342A02EE030067ABFD /* CoverPhotoModel.swift in Sources */,
+				AB22B5452A032AA80067ABFD /* SearchMiddleware.swift in Sources */,
 				AB22B51B2A019A510067ABFD /* BaseState.swift in Sources */,
 				AB22B5322A02EDEE0067ABFD /* CategoryModel.swift in Sources */,
 				AB22B5232A01C9560067ABFD /* SearchAction.swift in Sources */,

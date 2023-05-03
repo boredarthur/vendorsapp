@@ -16,7 +16,7 @@ struct SearchView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(searchStore.state.test)
+            Text(String(searchStore.state.vendors.count))
         }
         .padding()
         .onAppear {

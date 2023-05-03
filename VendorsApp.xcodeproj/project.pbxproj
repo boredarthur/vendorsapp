@@ -22,6 +22,10 @@
 		AB22B5272A01C9900067ABFD /* SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5262A01C9900067ABFD /* SearchStore.swift */; };
 		AB22B5292A01CA0D0067ABFD /* SearchReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */; };
 		AB22B52C2A02E9C00067ABFD /* vendors.json in Resources */ = {isa = PBXBuildFile; fileRef = AB22B52B2A02E9C00067ABFD /* vendors.json */; };
+		AB22B52F2A02ECFD0067ABFD /* VendorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B52E2A02ECFD0067ABFD /* VendorModel.swift */; };
+		AB22B5322A02EDEE0067ABFD /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5312A02EDEE0067ABFD /* CategoryModel.swift */; };
+		AB22B5342A02EE030067ABFD /* CoverPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5332A02EE030067ABFD /* CoverPhotoModel.swift */; };
+		AB22B5362A02EE850067ABFD /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5352A02EE850067ABFD /* TagModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		AB22B5262A01C9900067ABFD /* SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStore.swift; sourceTree = "<group>"; };
 		AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReducer.swift; sourceTree = "<group>"; };
 		AB22B52B2A02E9C00067ABFD /* vendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vendors.json; sourceTree = "<group>"; };
+		AB22B52E2A02ECFD0067ABFD /* VendorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorModel.swift; sourceTree = "<group>"; };
+		AB22B5312A02EDEE0067ABFD /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		AB22B5332A02EE030067ABFD /* CoverPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhotoModel.swift; sourceTree = "<group>"; };
+		AB22B5352A02EE850067ABFD /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 		AB22B4E22A0195810067ABFD = {
 			isa = PBXGroup;
 			children = (
+				AB22B52D2A02ECE60067ABFD /* Data */,
 				AB22B5182A019A250067ABFD /* Core */,
 				AB22B4ED2A0195810067ABFD /* VendorsApp */,
 				AB22B4FE2A0195820067ABFD /* VendorsAppTests */,
@@ -189,6 +198,25 @@
 				AB22B52B2A02E9C00067ABFD /* vendors.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB22B52D2A02ECE60067ABFD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AB22B5302A02ECFF0067ABFD /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AB22B5302A02ECFF0067ABFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB22B52E2A02ECFD0067ABFD /* VendorModel.swift */,
+				AB22B5312A02EDEE0067ABFD /* CategoryModel.swift */,
+				AB22B5332A02EE030067ABFD /* CoverPhotoModel.swift */,
+				AB22B5352A02EE850067ABFD /* TagModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +353,13 @@
 				AB22B51D2A019A790067ABFD /* BaseAction.swift in Sources */,
 				AB22B5292A01CA0D0067ABFD /* SearchReducer.swift in Sources */,
 				AB22B4F12A0195810067ABFD /* SearchView.swift in Sources */,
+				AB22B5362A02EE850067ABFD /* TagModel.swift in Sources */,
 				AB22B51F2A019C560067ABFD /* BaseStore.swift in Sources */,
 				AB22B4EF2A0195810067ABFD /* VendorsAppApp.swift in Sources */,
+				AB22B52F2A02ECFD0067ABFD /* VendorModel.swift in Sources */,
+				AB22B5342A02EE030067ABFD /* CoverPhotoModel.swift in Sources */,
 				AB22B51B2A019A510067ABFD /* BaseState.swift in Sources */,
+				AB22B5322A02EDEE0067ABFD /* CategoryModel.swift in Sources */,
 				AB22B5232A01C9560067ABFD /* SearchAction.swift in Sources */,
 				AB22B5252A01C9760067ABFD /* SearchState.swift in Sources */,
 				AB22B5272A01C9900067ABFD /* SearchStore.swift in Sources */,

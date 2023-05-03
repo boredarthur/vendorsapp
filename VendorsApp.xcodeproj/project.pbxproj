@@ -21,6 +21,7 @@
 		AB22B5252A01C9760067ABFD /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5242A01C9760067ABFD /* SearchState.swift */; };
 		AB22B5272A01C9900067ABFD /* SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5262A01C9900067ABFD /* SearchStore.swift */; };
 		AB22B5292A01CA0D0067ABFD /* SearchReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */; };
+		AB22B52C2A02E9C00067ABFD /* vendors.json in Resources */ = {isa = PBXBuildFile; fileRef = AB22B52B2A02E9C00067ABFD /* vendors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		AB22B5242A01C9760067ABFD /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
 		AB22B5262A01C9900067ABFD /* SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStore.swift; sourceTree = "<group>"; };
 		AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReducer.swift; sourceTree = "<group>"; };
+		AB22B52B2A02E9C00067ABFD /* vendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vendors.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		AB22B4ED2A0195810067ABFD /* VendorsApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB22B52A2A02E9B20067ABFD /* Resources */,
 				AB22B4EE2A0195810067ABFD /* VendorsAppApp.swift */,
 				AB22B5202A01C8EB0067ABFD /* Screens */,
 				AB22B4F22A0195820067ABFD /* Assets.xcassets */,
@@ -178,6 +181,14 @@
 				AB22B5282A01CA0D0067ABFD /* SearchReducer.swift */,
 			);
 			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		AB22B52A2A02E9B20067ABFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB22B52B2A02E9C00067ABFD /* vendors.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 			files = (
 				AB22B4F62A0195820067ABFD /* Preview Assets.xcassets in Resources */,
 				AB22B4F32A0195820067ABFD /* Assets.xcassets in Resources */,
+				AB22B52C2A02E9C00067ABFD /* vendors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

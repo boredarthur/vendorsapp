@@ -16,9 +16,12 @@ struct SearchView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(searchStore.state.test)
         }
         .padding()
+        .onAppear {
+            searchStore.dispatch(.fetch)
+        }
     }
 }
 

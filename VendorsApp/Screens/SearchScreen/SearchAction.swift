@@ -8,5 +8,5 @@
 import Foundation
 
 enum SearchAction: BaseAction {
-    
+    case fetch
 }

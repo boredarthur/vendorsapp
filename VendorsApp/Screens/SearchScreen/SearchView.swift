@@ -16,7 +16,7 @@ struct SearchView: View {
     
     // MARK: - Properties (private)
     
-    @StateObject var searchQuery = DebouncedQuery()
+    @StateObject private var searchQuery = DebouncedQuery()
     
     // MARK: - View layout
     
@@ -36,20 +36,34 @@ struct SearchView: View {
                 EmptyResultsView()
                 Spacer()
             } else {
-                ScrollView {
-                    VStack(spacing: 25.0) {
-                        ForEach(searchStore.state.vendors, id: \.id) { vendor in
-                            VendorCardView(vendor: vendor)
-                        }
+                List {
+                    ForEach(searchStore.state.vendors, id: \.id) { vendor in
+                        VendorCardView(vendor: vendor)
+                            .onAppear {
+                                searchStore.dispatch(.loadMoreVendors(currentVendor: vendor))
+                            }
                     }
+                    .listRowSeparator(.hidden)
                 }
+                .listStyle(.plain)
                 .scrollIndicators(.hidden)
-                .padding(.horizontal)
             }
         }
         .onAppear {
             searchStore.dispatch(.fetch)
         }
+    }
+}
+
+struct PositionData: Identifiable {
+    let id: Int
+    let center: Anchor<CGPoint>
+}
+
+struct Positions: PreferenceKey {
+    static var defaultValue: [PositionData] = []
+    static func reduce(value: inout [PositionData], nextValue: () -> [PositionData]) {
+        value.append(contentsOf: nextValue())
     }
 }
 

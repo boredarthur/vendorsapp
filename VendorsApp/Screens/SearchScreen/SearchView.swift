@@ -31,14 +31,20 @@ struct SearchView: View {
                     guard searchQuery.count > 3 else { return }
                     searchStore.dispatch(.search(searchQuery))
                 }
-            ScrollView {
-                VStack(spacing: 25.0) {
-                    ForEach(searchStore.state.vendors, id: \.id) { vendor in
-                        VendorCardView(vendor: vendor)
+            if searchStore.state.vendors.count == 0 {
+                Spacer()
+                EmptyResultsView()
+                Spacer()
+            } else {
+                ScrollView {
+                    VStack(spacing: 25.0) {
+                        ForEach(searchStore.state.vendors, id: \.id) { vendor in
+                            VendorCardView(vendor: vendor)
+                        }
                     }
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
         .onAppear {
             searchStore.dispatch(.fetch)

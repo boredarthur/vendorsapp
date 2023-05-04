@@ -9,4 +9,5 @@ import Foundation
 
 struct SearchState: BaseState {
     var vendors: [Vendor] = []
+    var isSearching: Bool = false
 }

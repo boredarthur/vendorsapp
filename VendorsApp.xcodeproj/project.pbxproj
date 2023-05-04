@@ -32,6 +32,15 @@
 		AB22B5452A032AA80067ABFD /* SearchMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5442A032AA80067ABFD /* SearchMiddleware.swift */; };
 		AB22B5482A03B4710067ABFD /* MockedNetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B5472A03B4710067ABFD /* MockedNetworkingServiceTests.swift */; };
 		AB22B54A2A03BA410067ABFD /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = AB22B5492A03BA410067ABFD /* mock.json */; };
+		AB22B5502A03C2A40067ABFD /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B54F2A03C2A40067ABFD /* SearchBarView.swift */; };
+		AB4EE8302A03EBD20027F0D6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB4EE82F2A03EBD20027F0D6 /* Kingfisher */; };
+		AB4EE8362A03F3310027F0D6 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB4EE8352A03F3310027F0D6 /* SVGKit */; };
+		AB4EE8392A03F3510027F0D6 /* SVGImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EE8382A03F3510027F0D6 /* SVGImageProcessor.swift */; };
+		AB4EE83C2A0405820027F0D6 /* EmptyResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EE83B2A0405820027F0D6 /* EmptyResultsView.swift */; };
+		ABA8F4B92A03CA0A0004AEDE /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8F4B82A03CA0A0004AEDE /* UIApplication+Extensions.swift */; };
+		ABA8F4BD2A03CCEF0004AEDE /* VendorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8F4BC2A03CCEF0004AEDE /* VendorCardView.swift */; };
+		ABA8F4BF2A03D0AD0004AEDE /* FavoritedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8F4BE2A03D0AD0004AEDE /* FavoritedView.swift */; };
+		ABA8F4C52A03E1A10004AEDE /* VerticalFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8F4C42A03E1A10004AEDE /* VerticalFlowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +89,13 @@
 		AB22B5442A032AA80067ABFD /* SearchMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMiddleware.swift; sourceTree = "<group>"; };
 		AB22B5472A03B4710067ABFD /* MockedNetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkingServiceTests.swift; sourceTree = "<group>"; };
 		AB22B5492A03BA410067ABFD /* mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
+		AB22B54F2A03C2A40067ABFD /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		AB4EE8382A03F3510027F0D6 /* SVGImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageProcessor.swift; sourceTree = "<group>"; };
+		AB4EE83B2A0405820027F0D6 /* EmptyResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResultsView.swift; sourceTree = "<group>"; };
+		ABA8F4B82A03CA0A0004AEDE /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		ABA8F4BC2A03CCEF0004AEDE /* VendorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCardView.swift; sourceTree = "<group>"; };
+		ABA8F4BE2A03D0AD0004AEDE /* FavoritedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritedView.swift; sourceTree = "<group>"; };
+		ABA8F4C42A03E1A10004AEDE /* VerticalFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4EE8362A03F3310027F0D6 /* SVGKit in Frameworks */,
+				AB4EE8302A03EBD20027F0D6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +154,6 @@
 				AB22B52A2A02E9B20067ABFD /* Resources */,
 				AB22B4EE2A0195810067ABFD /* VendorsAppApp.swift */,
 				AB22B5202A01C8EB0067ABFD /* Screens */,
-				AB22B4F22A0195820067ABFD /* Assets.xcassets */,
 				AB22B4F42A0195820067ABFD /* Preview Content */,
 			);
 			path = VendorsApp;
@@ -172,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				AB22B5192A019A290067ABFD /* Architecture */,
+				AB22B54E2A03C29B0067ABFD /* Views */,
+				AB4EE8372A03F3400027F0D6 /* KingfisherProcessors */,
+				ABA8F4B72A03C9EF0004AEDE /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -210,6 +230,7 @@
 		AB22B52A2A02E9B20067ABFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB22B4F22A0195820067ABFD /* Assets.xcassets */,
 				AB22B52B2A02E9C00067ABFD /* vendors.json */,
 				AB22B5492A03BA410067ABFD /* mock.json */,
 			);
@@ -261,6 +282,34 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		AB22B54E2A03C29B0067ABFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB22B54F2A03C2A40067ABFD /* SearchBarView.swift */,
+				ABA8F4BC2A03CCEF0004AEDE /* VendorCardView.swift */,
+				ABA8F4BE2A03D0AD0004AEDE /* FavoritedView.swift */,
+				ABA8F4C42A03E1A10004AEDE /* VerticalFlowView.swift */,
+				AB4EE83B2A0405820027F0D6 /* EmptyResultsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB4EE8372A03F3400027F0D6 /* KingfisherProcessors */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EE8382A03F3510027F0D6 /* SVGImageProcessor.swift */,
+			);
+			path = KingfisherProcessors;
+			sourceTree = "<group>";
+		};
+		ABA8F4B72A03C9EF0004AEDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA8F4B82A03CA0A0004AEDE /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +326,10 @@
 			dependencies = (
 			);
 			name = VendorsApp;
+			packageProductDependencies = (
+				AB4EE82F2A03EBD20027F0D6 /* Kingfisher */,
+				AB4EE8352A03F3310027F0D6 /* SVGKit */,
+			);
 			productName = VendorsApp;
 			productReference = AB22B4EB2A0195810067ABFD /* VendorsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -349,6 +402,10 @@
 				Base,
 			);
 			mainGroup = AB22B4E22A0195810067ABFD;
+			packageReferences = (
+				AB4EE82E2A03EBD20027F0D6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				AB4EE8342A03F3310027F0D6 /* XCRemoteSwiftPackageReference "SVGKit" */,
+			);
 			productRefGroup = AB22B4EC2A0195810067ABFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -395,7 +452,10 @@
 			files = (
 				AB22B51D2A019A790067ABFD /* BaseAction.swift in Sources */,
 				AB22B53C2A0300880067ABFD /* MockedNetworkingService.swift in Sources */,
+				ABA8F4BD2A03CCEF0004AEDE /* VendorCardView.swift in Sources */,
+				ABA8F4B92A03CA0A0004AEDE /* UIApplication+Extensions.swift in Sources */,
 				AB22B5292A01CA0D0067ABFD /* SearchReducer.swift in Sources */,
+				AB4EE8392A03F3510027F0D6 /* SVGImageProcessor.swift in Sources */,
 				AB22B4F12A0195810067ABFD /* SearchView.swift in Sources */,
 				AB22B5362A02EE850067ABFD /* TagModel.swift in Sources */,
 				AB22B5422A0322FE0067ABFD /* VendorsReponse.swift in Sources */,
@@ -403,12 +463,16 @@
 				AB22B4EF2A0195810067ABFD /* VendorsAppApp.swift in Sources */,
 				AB22B52F2A02ECFD0067ABFD /* VendorModel.swift in Sources */,
 				AB22B5342A02EE030067ABFD /* CoverPhotoModel.swift in Sources */,
+				AB4EE83C2A0405820027F0D6 /* EmptyResultsView.swift in Sources */,
+				AB22B5502A03C2A40067ABFD /* SearchBarView.swift in Sources */,
 				AB22B5452A032AA80067ABFD /* SearchMiddleware.swift in Sources */,
 				AB22B51B2A019A510067ABFD /* BaseState.swift in Sources */,
 				AB22B5322A02EDEE0067ABFD /* CategoryModel.swift in Sources */,
+				ABA8F4C52A03E1A10004AEDE /* VerticalFlowView.swift in Sources */,
 				AB22B5232A01C9560067ABFD /* SearchAction.swift in Sources */,
 				AB22B5252A01C9760067ABFD /* SearchState.swift in Sources */,
 				AB22B5272A01C9900067ABFD /* SearchStore.swift in Sources */,
+				ABA8F4BF2A03D0AD0004AEDE /* FavoritedView.swift in Sources */,
 				AB22B5392A02FF3E0067ABFD /* NetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +799,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB4EE82E2A03EBD20027F0D6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 7.6.2;
+			};
+		};
+		AB4EE8342A03F3310027F0D6 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB4EE82F2A03EBD20027F0D6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4EE82E2A03EBD20027F0D6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		AB4EE8352A03F3310027F0D6 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB4EE8342A03F3310027F0D6 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB22B4E32A0195810067ABFD /* Project object */;
 }

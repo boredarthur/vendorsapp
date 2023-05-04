@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct Vendor: Codable {
+struct Vendor: Codable, Equatable {
     let id: Int
     let companyName, areaServed, shopType: String
     let favorited, follow: Bool
     let businessType: String
     let coverPhoto: CoverPhoto
-    let categories: [Category]
+    var categories: [Category]
     let tags: [Tag]
+    
+    static func == (lhs: Vendor, rhs: Vendor) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     enum CodingKeys: String, CodingKey {
         case id

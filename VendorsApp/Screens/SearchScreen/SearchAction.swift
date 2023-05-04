@@ -10,4 +10,5 @@ import Foundation
 enum SearchAction: BaseAction {
     case fetch
     case setVendors(_ vendors: [Vendor])
+    case search(_ query: String)
 }

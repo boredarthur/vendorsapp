@@ -6,6 +6,31 @@
 //
 
 import SwiftUI
+import Combine
+
+class DebouncedQuery: ObservableObject {
+    
+    // MARK: - Properties (public)
+    
+    @Published var query: String = ""
+    @Published var debouncedQuery: String = ""
+    
+    // MARK: - Properties (private)
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
+    // MARK: - Initialization
+    
+    init(dueTime: TimeInterval = 0.5) {
+        $query
+            .removeDuplicates()
+            .debounce(for: .seconds(dueTime), scheduler: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] value in
+                self?.debouncedQuery = value
+            })
+            .store(in: &subscriptions)
+    }
+}
 
 struct SearchBarView: View {
     

@@ -13,8 +13,10 @@ func searchReducer(state: inout SearchState, action: SearchAction) -> AnyPublish
     switch action {
         case .setVendors(let vendors):
             state.vendors = vendors
-        default:
-            break
+        case .fetch:
+            state.isSearching = false
+        case .search(_):
+            state.isSearching = true
     }
     return nil
 }

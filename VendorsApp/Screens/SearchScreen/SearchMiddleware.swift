@@ -18,6 +18,19 @@ func networkingMiddleware(service: NetworkingService) -> Middleware<SearchState,
                     .replaceError(with: .init(vendors: []))
                     .map { SearchAction.setVendors($0.vendors) }
                     .eraseToAnyPublisher()
+            case .search(let query):
+                return service.fetchData(for: VendorsResponse.self, from: url!)
+                    .subscribe(on: DispatchQueue.main)
+                    .replaceError(with: .init(vendors: []))
+                    .map { vendorResponse in
+                        vendorResponse.vendors.filter { vendor in
+                            vendor.companyName.contains(query)
+                        }
+                    }
+                    .map { vendors in
+                        SearchAction.setVendors(vendors)
+                    }
+                    .eraseToAnyPublisher()
             default:
                 break
         }

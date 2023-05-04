@@ -16,15 +16,20 @@ struct SearchView: View {
     
     // MARK: - Properties (private)
     
-    @State private var searchQuery: String = ""
+    @StateObject var searchQuery = DebouncedQuery()
     
     // MARK: - View layout
     
     var body: some View {
         VStack {
-            SearchBarView(searchQuery: $searchQuery)
-                .onReceive(Just(searchQuery)) { searchQuery in
-                    print(searchQuery)
+            SearchBarView(searchQuery: $searchQuery.query)
+                .onChange(of: searchQuery.debouncedQuery) { searchQuery in
+                    if searchStore.state.isSearching, searchQuery.count < 4 {
+                        searchStore.dispatch(.fetch)
+                    }
+                    
+                    guard searchQuery.count > 3 else { return }
+                    searchStore.dispatch(.search(searchQuery))
                 }
             ScrollView {
                 VStack(spacing: 25.0) {

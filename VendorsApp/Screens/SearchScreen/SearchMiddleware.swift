@@ -16,7 +16,11 @@ func networkingMiddleware(service: NetworkingService) -> Middleware<SearchState,
                 return service.fetchData(for: VendorsResponse.self, from: url!)
                     .subscribe(on: DispatchQueue.main)
                     .replaceError(with: .init(vendors: []))
-                    .map { SearchAction.setVendors(Array($0.vendors.prefix(4))) }
+                    .map { vendorResponse in
+                        let firstVendors = Array(vendorResponse.vendors.prefix(4))
+                        let sortedVendors = firstVendors.sorted { $0.companyName > $1.companyName }
+                        return SearchAction.setVendors(sortedVendors)
+                    }
                     .eraseToAnyPublisher()
             case .search(let query):
                 return service.fetchData(for: VendorsResponse.self, from: url!)
@@ -37,8 +41,9 @@ func networkingMiddleware(service: NetworkingService) -> Middleware<SearchState,
                     .subscribe(on: DispatchQueue.main)
                     .replaceError(with: .init(vendors: []))
                     .map { vendorResponse in
-                        let filteredVendors = vendorResponse.vendors.filter { $0.id > currentVendor.id }
-                        return SearchAction.appendVendors(Array(filteredVendors.prefix(4)))
+                        let filteredVendors = Array(vendorResponse.vendors.filter { $0.id > currentVendor.id }.prefix(4))
+                        let sortedVendors = filteredVendors.sorted { $0.companyName > $1.companyName }
+                        return SearchAction.appendVendors(sortedVendors)
                     }
                     .eraseToAnyPublisher()
             default:

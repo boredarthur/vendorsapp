@@ -40,10 +40,15 @@ struct SearchView: View {
                     ForEach(searchStore.state.vendors, id: \.id) { vendor in
                         VendorCardView(vendor: vendor)
                             .onAppear {
-                                searchStore.dispatch(.loadMoreVendors(currentVendor: vendor))
+                                if !searchStore.state.isSearching {
+                                    searchStore.dispatch(.loadMoreVendors(currentVendor: vendor))
+                                }
                             }
                     }
                     .listRowSeparator(.hidden)
+                }
+                .refreshable {
+                    searchStore.dispatch(.fetch)
                 }
                 .listStyle(.plain)
                 .scrollIndicators(.hidden)

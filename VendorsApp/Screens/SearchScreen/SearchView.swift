@@ -26,7 +26,13 @@ struct SearchView: View {
                 .onReceive(Just(searchQuery)) { searchQuery in
                     print(searchQuery)
                 }
-            Text(String(searchStore.state.vendors.count))
+            ScrollView {
+                VStack(spacing: 25.0) {
+                    ForEach(searchStore.state.vendors, id: \.id) { vendor in
+                        VendorCardView()
+                    }
+                }
+            }
         }
         .onAppear {
             searchStore.dispatch(.fetch)

@@ -51,6 +51,7 @@ struct VendorCardView: View {
             .frame(height: 170.0)
             .background(
                 KFImage.url(URL(string: vendor.coverPhoto.mediaUrl))
+                    .onFailureImage(.init(named: "no_image_placeholder"))
                     .cacheMemoryOnly()
                     .loadDiskFileSynchronously()
                     .fade(duration: 0.25)
@@ -77,6 +78,7 @@ struct VendorCardView: View {
                 VerticalFlow(items: $vendor.categories) { category in
                     HStack(spacing: 5.0) {
                         KFImage.url(URL(string: category.image.mediaUrl))
+                            .onFailureImage(.init(systemName: "questionmark"))
                             .setProcessor(SVGImageProcessor())
                             .cacheMemoryOnly()
                             .loadDiskFileSynchronously()

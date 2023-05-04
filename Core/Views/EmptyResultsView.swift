@@ -18,7 +18,7 @@ struct EmptyResultsView: View {
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color("primaryGray"))
-        }
+        }.padding()
     }
 }
 

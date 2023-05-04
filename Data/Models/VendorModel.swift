@@ -13,7 +13,7 @@ struct Vendor: Codable {
     let favorited, follow: Bool
     let businessType: String
     let coverPhoto: CoverPhoto
-    let categories: [Category]
+    var categories: [Category]
     let tags: [Tag]
     
     enum CodingKeys: String, CodingKey {

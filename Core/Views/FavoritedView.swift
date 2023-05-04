@@ -9,13 +9,15 @@ import SwiftUI
 
 struct FavoritedView: View {
     
+    @State var isFavorite: Bool
+    
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(.white)
-            Image(systemName: "bookmark")
+                .foregroundColor(isFavorite ? Color("green") : .white)
+            Image(systemName: isFavorite ? "bookmark.fill" : "bookmark")
                 .font(.headline.weight(.bold))
-                .foregroundColor(Color("green"))
+                .foregroundColor(isFavorite ? .white : Color("green"))
         }
         .frame(width: 36.0, height: 36.0)
         .offset(x: -10.0, y: 10.0)
@@ -24,6 +26,12 @@ struct FavoritedView: View {
 
 struct FavoritedView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritedView()
+        Group {
+            FavoritedView(isFavorite: true)
+                .fixedSize()
+            
+            FavoritedView(isFavorite: false)
+                .fixedSize()
+        }
     }
 }

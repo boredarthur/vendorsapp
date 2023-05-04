@@ -29,10 +29,11 @@ struct SearchView: View {
             ScrollView {
                 VStack(spacing: 25.0) {
                     ForEach(searchStore.state.vendors, id: \.id) { vendor in
-                        VendorCardView()
+                        VendorCardView(vendor: vendor)
                     }
                 }
             }
+            .padding(.horizontal)
         }
         .onAppear {
             searchStore.dispatch(.fetch)

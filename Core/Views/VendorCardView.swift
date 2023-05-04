@@ -6,26 +6,21 @@
 //
 
 import SwiftUI
-
-struct TempCategory {
-    var iconName: String
-    var title: String
-}
+import Kingfisher
 
 struct VendorCardView: View {
+
+    // MARK: - Properties (public)
     
-    private var tags: [String] = ["Some tag",
-                                  "Some tag",
-                                  "Some tag",
-                                  "Some tag",
-                                  "Some tag",
-                                  "Some tag"]
-    @State private var categories: [TempCategory] = [.init(iconName: "questionmark", title: "Category one"),
-                                                     .init(iconName: "questionmark", title: "Category two"),
-                                                     .init(iconName: "questionmark", title: "Category three"),
-                                                     .init(iconName: "questionmark", title: "Category four"),
-                                                     .init(iconName: "questionmark", title: "Category four"),
-                                                     .init(iconName: "questionmark", title: "Category four")]
+    @State var vendor: Vendor
+    
+    // MARK: - Initialization
+
+    init(vendor: Vendor) {
+        self.vendor = vendor
+    }
+    
+    // MARK: - View layout
     
     var body: some View {
         VStack {
@@ -33,14 +28,14 @@ struct VendorCardView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        FavoritedView()
+                        FavoritedView(isFavorite: vendor.favorited)
                     }
                     Spacer()
                 }
                 VStack {
                     Spacer()
                     HStack {
-                        Text("Location")
+                        Text(vendor.areaServed)
                             .font(.system(size: 16.0, weight: .regular))
                             .foregroundColor(Color("primaryGray"))
                             .padding([.leading, .trailing])
@@ -55,7 +50,13 @@ struct VendorCardView: View {
             }
             .frame(height: 170.0)
             .background(
-                Color.red
+                KFImage.url(URL(string: vendor.coverPhoto.mediaUrl))
+                    .cacheMemoryOnly()
+                    .loadDiskFileSynchronously()
+                    .fade(duration: 0.25)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 170.0)
                     .overlay(
                         LinearGradient(colors: [.clear, Color("customBlack")],
                                        startPoint: .top,
@@ -68,31 +69,53 @@ struct VendorCardView: View {
             
             VStack(alignment: .leading, spacing: 10.0) {
                 HStack {
-                    Text("Title")
+                    Text(vendor.companyName)
                         .font(.system(size: 18.0, weight: .bold))
                         .foregroundColor(Color("primaryGray"))
                     Spacer()
                 }
-                VerticalFlow(items: $categories) { category in
+                VerticalFlow(items: $vendor.categories) { category in
                     HStack(spacing: 5.0) {
-                        Image(systemName: category.iconName)
-                            .font(.system(size: 16.0, weight: .light))
-                        Text(category.title)
+                        KFImage.url(URL(string: category.image.mediaUrl))
+                            .setProcessor(SVGImageProcessor())
+                            .cacheMemoryOnly()
+                            .loadDiskFileSynchronously()
+                            .fade(duration: 0.25)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 22.0, height: 22.0)
+                        Text(category.name)
                             .foregroundColor(Color("primaryGray"))
                             .font(.system(size: 16.0, weight: .regular))
                     }
                 }
-                Text(tags.map { "• \($0)" }.joined(separator: " "))
+                Text(vendor.tags.map { "• \($0.name)" }.joined(separator: " "))
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Color("secondaryGray"))
             }
         }
-        .padding(.horizontal)
     }
 }
 
 struct VendorCardView_Previews: PreviewProvider {
     static var previews: some View {
-        VendorCardView()
+        VendorCardView(vendor: Vendor(id: 0,
+                                      companyName: "Company",
+                                      areaServed: "Lviv",
+                                      shopType: "Shop",
+                                      favorited: false,
+                                      follow: false,
+                                      businessType: "Shop",
+                                      coverPhoto: .init(id: 0,
+                                                        mediaUrl: "url",
+                                                        mediaType: .image),
+                                      categories: [.init(id: 0,
+                                                         name: "Category 1",
+                                                         image: .init(id: 0,
+                                                                      mediaUrl: "url",
+                                                                      mediaType: .image))],
+                                      tags: [.init(id: 0,
+                                                   name: "Tag",
+                                                   purpose: "None")]))
     }
 }

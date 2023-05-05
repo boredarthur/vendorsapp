@@ -3,6 +3,10 @@ An iOS application, which reads the data from local .json (vendors.json) and dis
 User can search for vendors, which are ordered by company name. As user scrolls down the list, app loads new vendors from json file.\n
 By default, only 4 vendors and being displayed and with each further fetch request additional 4 are being appended to the list.
 
+## Features
+- Debounced search
+- Pagination
+
 ## Technologies used
 - Swift
 - SwiftUI
